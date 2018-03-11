@@ -14,11 +14,23 @@ public class Incidence {
     String description;
     String location;                    // formato de la localización: "45.67, 32.86"
     List<String> labels;                // etiquetas de la incidencia
-    HashMap<String,Object> campos;      // campos con propiedad valor
-    Estado status;
+    HashMap<String, String> campos;      // campos con propiedad valor
+    Estado status;                      // Ver Enum: "Estado". Ej: ABIERTA, EN_PROCESO, CERRADA, ANULADA
     Date expiration;                    // fecha de caducidad, ej: en caso de los sensores de temperatura
 
-    public Incidence(String username, String incidenceName, String description, String location, List<String> labels, HashMap<String, Object> campos, Estado status, Date expiration) {
+    /**
+     * Constructor con todos los parametros
+     *
+     * @param username
+     * @param incidenceName
+     * @param description
+     * @param location
+     * @param labels
+     * @param campos
+     * @param status
+     * @param expiration
+     */
+    public Incidence(String username, String incidenceName, String description, String location, List<String> labels, HashMap<String, String> campos, Estado status, Date expiration) {
         this.username = username;
         this.incidenceName = incidenceName;
         this.description = description;
@@ -29,6 +41,15 @@ public class Incidence {
         this.expiration = expiration;
     }
 
+    /**
+     * Constructor con los parámetros obligatorios
+     *
+     * @param username
+     * @param incidenceName
+     * @param description
+     * @param location
+     * @param labels
+     */
     public Incidence(String username, String incidenceName, String description, String location, List<String> labels) {
         this.username = username;
         this.incidenceName = incidenceName;
@@ -77,11 +98,11 @@ public class Incidence {
         this.labels = labels;
     }
 
-    public HashMap<String, Object> getCampos() {
+    public HashMap<String, String> getCampos() {
         return campos;
     }
 
-    public void setCampos(HashMap<String, Object> campos) {
+    public void setCampos(HashMap<String, String> campos) {
         this.campos = campos;
     }
 
