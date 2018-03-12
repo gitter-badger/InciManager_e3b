@@ -1,4 +1,6 @@
 # InciManager_e3b
+
+[![Join the chat at https://gitter.im/Arquisoft/InciManager_e3b](https://badges.gitter.im/Arquisoft/InciManager_e3b.svg)](https://gitter.im/Arquisoft/InciManager_e3b?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Módulo InciManager, equipo e3b
 
 # Authors (2017/2018)
