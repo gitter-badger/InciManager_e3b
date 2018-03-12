@@ -10,6 +10,7 @@ import java.util.List;
 public class IncidenceREST {
 
     String username;                    // nombre de usuario del agente
+    String password;                    // para autenticación en la petición REST
     String incidenceName;
     String description;
     String location;                    // formato de la localización: "45.67, 32.86"
@@ -21,8 +22,9 @@ public class IncidenceREST {
     public IncidenceREST() {
     }
 
-    public IncidenceREST(String username, String incidenceName, String description, String location, List<String> labels, HashMap<String, String> campos, Estado status, Date expiration) {
+    public IncidenceREST(String username, String password, String incidenceName, String description, String location, List<String> labels, HashMap<String, String> campos, Estado status, Date expiration) {
         this.username = username;
+        this.password = password;
         this.incidenceName = incidenceName;
         this.description = description;
         this.location = location;
@@ -30,6 +32,14 @@ public class IncidenceREST {
         this.campos = campos;
         this.status = status;
         this.expiration = expiration;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getUsername() {
