@@ -14,7 +14,7 @@ public class Incidence {
     String description;
     String location;                    // formato de la localización: "45.67, 32.86"
     List<String> labels;                // etiquetas de la incidencia
-    HashMap<String, String> campos;      // campos con propiedad valor
+    HashMap<String, String> campos;     // campos con propiedad valor
     Estado status;                      // Ver Enum: "Estado". Ej: ABIERTA, EN_PROCESO, CERRADA, ANULADA
     Date expiration;                    // fecha de caducidad, ej: en caso de los sensores de temperatura
 
