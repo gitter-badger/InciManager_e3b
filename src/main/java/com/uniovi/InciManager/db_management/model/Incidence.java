@@ -3,21 +3,35 @@ package com.uniovi.InciManager.db_management.model;
 import com.uniovi.InciManager.util.Estado;
 import sun.management.Agent;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+@Entity
+@Table(name = "Incidences")
 public class Incidence {
+
+    // Id generado automáticamente para diferenciar cada uno (para mapear)
+    @Id
+    @GeneratedValue
+    private Long id;
 
     String username;                    // nombre de usuario del agente
     String incidenceName;
     String description;
     String location;                    // formato de la localización: "45.67, 32.86"
     List<String> labels;                // etiquetas de la incidencia
-    HashMap<String, String> campos;      // campos con propiedad valor
+    HashMap<String, String> campos;     // campos con propiedad valor
     Estado status;                      // Ver Enum: "Estado". Ej: ABIERTA, EN_PROCESO, CERRADA, ANULADA
     Date expiration;                    // fecha de caducidad, ej: en caso de los sensores de temperatura
 
+    public Incidence() {
+    }
     /**
      * Constructor con todos los parametros
      *
@@ -56,6 +70,10 @@ public class Incidence {
         this.description = description;
         this.location = location;
         this.labels = labels;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getUsername() {
